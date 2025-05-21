@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+
+:root {
+  --main-color: #e5e5e5;
+  --highlight: #bb528a;
+  --light-color: #fbd3d4;
+  --max-width: 1400px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: var(--light-color);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--highlight);
+  z-index: -1;
+  animation: bodyAnimation 1s ease-in-out forwards;
+}
+
+@keyframes bodyAnimation {
+  0% {
+    width: 0vw;
+  }
+  100% {
+    width: 50vw;
+  }
+}
+
+body::before {
+  content: "0";
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  font-size: 70rem;
+  font-weight: 200;
+  color: var(--light-color);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+nav {
+  width: 100%;
+  padding: 2rem 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.site-logo {
+  width: 200px;
+  height: 110px;
+  position: relative;
+  bottom: 23px;
+  right: 10px;
+}
+
+.menu-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.menu-links a {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--light-color);
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-links a:hover {
+  transform: scale(1.1);
+  color: #ffffff;
+}
+
+.explore-btn {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--highlight);
+  background-color: var(--light-color);
+  box-shadow: 0 0 0px var(--main-color);
+  transition: transform 0.1s ease-in-out;
+}
+
+.explore-btn:active {
+  transform: scale(0.95);
+}
+
+.big-letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 30rem;
+  line-height: 40rem;
+  font-weight: 900;
+  transform: translate(-50%, -50%);
+  color: var(--main-color);
+}
+
+.main-image {
+  position: absolute;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  top: 54%;
+  left: 53.5%;
+  transform: translate(-50%, -50%);
+}
+
+.left-text,
+.right-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5rem;
+  color: rgba(255, 246, 246, 0.799);
+  letter-spacing: 25px;
+}
+
+.left-text {
+  transform: translate(calc(-50% - 250px), -50%);
+}
+
+.right-text {
+  transform: translate(calc(-50% + 250px), -50%);
+}
+
+.wrapper h5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.wrapper h5::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100px;
+  top: 50%;
+}
+
+.tag-one {
+  color: var(--highlight);
+  transform: translate(calc(-50% - 300px), calc(-50% - 200px));
+}
+
+.tag-two {
+  color: var(--light-color);
+  transform: translate(calc(-50% + 300px), calc(-50% - 200px));
+}
+
+.tag-three {
+  color: var(--highlight);
+  transform: translate(calc(-50% - 300px), calc(-50% + 200px));
+}
+
+.tag-four {
+  color: var(--light-color);
+  transform: translate(calc(-50% + 300px), calc(-50% + 200px));
+}
+
+.tag-one::after,
+.tag-three::after {
+  right: 0;
+  transform: translate(calc(100% + 40px), -50%);
+  background-color: var(--highlight);
+}
+
+.tag-two::after,
+.tag-four::after {
+  left: 0;
+  transform: translate(calc(-100% - 40px), -50%);
+  background-color: var(--light-color);
+}
+
+.main-footer {
+  position: fixed;        
+  bottom: 2.5rem;         
+  right: 1.5rem;          
+  width: auto;            
+  padding: 0.5rem 3rem;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  z-index: 1000;         
+}
+
+
+
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.footer-links li {
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.footer-links li:nth-child(1) {
+  animation-delay: 6s;
+}
+
+.footer-links li:nth-child(2) {
+  animation-delay: 6.5s;
+}
+
+.footer-links li:nth-child(3) {
+  animation-delay: 7s;
+}
+
+.footer-links a {
+  color: var(--light-color);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--main-color);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
